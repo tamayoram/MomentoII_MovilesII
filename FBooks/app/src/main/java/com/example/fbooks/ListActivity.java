@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -42,6 +43,13 @@ public class ListActivity extends BaseActivity {
             }
         });
 
+        lv_list_books.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                model=modelArrayList.get(i);
+                makeSimpleAlertDialog("Open","Titulo: " + model.getTitle());
+            }
+        });
 
     }
 
